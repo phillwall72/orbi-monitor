@@ -8,6 +8,9 @@ RUN apt-get update && apt-get install -y iputils-ping && rm -rf /var/lib/apt/lis
 
 COPY monitor.py .
 
+ARG APP_VERSION=unknown
+ENV APP_VERSION=${APP_VERSION}
+
 VOLUME ["/data"]
 EXPOSE 8080
 

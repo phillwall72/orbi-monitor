@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>orbi-monitor</Name>
-  <Repository>orbi-monitor</Repository>
-  <Registry></Registry>
+  <Repository>ghcr.io/phillwall72/orbi-monitor:latest</Repository>
+  <Registry>https://github.com/phillwall72/orbi-monitor/pkgs/container/orbi-monitor</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>bash</Shell>
@@ -14,7 +14,6 @@
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
   <TemplateURL/>
   <Icon>/boot/config/plugins/dockerMan/templates-user/orbi-monitor-icon.png</Icon>
-  <!-- Copy orbi-monitor-icon.png to /boot/config/plugins/dockerMan/templates-user/ -->
   <ExtraParams>--shm-size=1g</ExtraParams>
   <PostArgs/>
   <CPUset/>

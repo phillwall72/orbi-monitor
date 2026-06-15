@@ -1809,11 +1809,7 @@ def build_dashboard():
               No plugs configured yet. Edit <code>/data/tapo_config.json</code> to add plugs.
             </p>"""
 
-    try:
-        with open(f"{DATA_DIR}/version.txt") as _vf:
-            dash_version = _vf.read().strip()
-    except Exception:
-        dash_version = "unknown"
+    dash_version = os.environ.get("APP_VERSION", "unknown")
     return (DASH_HTML
             .replace("{{CARDS}}", cards)
             .replace("{{CHARTS}}", charts)
@@ -1914,12 +1910,7 @@ def dashboard_worker():
 
 # ─── Main loop ─────────────────────────────────────────────────────────────────
 def run():
-    # Read version from /data/version.txt if present, fallback to hardcoded
-    try:
-        with open(f"{DATA_DIR}/version.txt") as _vf:
-            VERSION = _vf.read().strip()
-    except Exception:
-        VERSION = "unknown"
+    VERSION = os.environ.get("APP_VERSION", "unknown")
 
     log.info(f"Orbi Monitor {VERSION} starting | {ORBI_IP} | check:{CHECK_INTERVAL}s ping:{PING_INTERVAL}s")
     init_db()
