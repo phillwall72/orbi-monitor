@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>orbi-monitor</Name>
+  <Repository>orbi-monitor</Repository>
+  <Registry></Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Monitors Orbi satellite backhaul status and ping latency. Provides a web dashboard and email alerts for disconnections, status changes and errors.</Overview>
+  <Category>Network:Management</Category>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <TemplateURL/>
+  <Icon>/boot/config/plugins/dockerMan/templates-user/orbi-monitor-icon.png</Icon>
+  <!-- Copy orbi-monitor-icon.png to /boot/config/plugins/dockerMan/templates-user/ -->
+  <ExtraParams>--shm-size=1g</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Monitors Orbi satellite backhaul status and ping latency. Provides a web dashboard and email alerts for disconnections, status changes and errors.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/orbi-monitor/data</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>192.168.0.1</Value>
+      <Name>ORBI_IP</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>ORBI_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>admin</Value>
+      <Name>ORBI_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>GMAIL_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>GMAIL_APP_PASS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>ALERT_TO</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>600</Value>
+      <Name>CHECK_INTERVAL_SECS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>60</Value>
+      <Name>PING_INTERVAL_SECS</Name>
+      <Mode/>
+    </Variable>
+
+  </Environment>
+  <Labels/>
+  <Config Name="Dashboard Port" Target="8080" Default="8080" Mode="tcp" Description="Host port for the web dashboard — change this if 8080 is already in use on your Unraid server" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="Data" Target="/data" Default="/mnt/user/appdata/orbi-monitor/data" Mode="rw" Description="Persistent data, logs and database" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/orbi-monitor/data</Config>
+  <Config Name="Orbi IP" Target="ORBI_IP" Default="192.168.0.1" Mode="" Description="IP address of your Orbi router" Type="Variable" Display="always" Required="true" Mask="false">192.168.0.1</Config>
+  <Config Name="Orbi Password" Target="ORBI_PASSWORD" Default="" Mode="" Description="Orbi admin password" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="Orbi Username" Target="ORBI_USER" Default="admin" Mode="" Description="Orbi admin username (usually admin)" Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
+  <Config Name="Gmail Address" Target="GMAIL_USER" Default="" Mode="" Description="Gmail address to send alerts from" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Gmail App Password" Target="GMAIL_APP_PASS" Default="" Mode="" Description="Gmail App Password (not your login password)" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="Alert Email" Target="ALERT_TO" Default="" Mode="" Description="Email address to send alerts to" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Check Interval (seconds)" Target="CHECK_INTERVAL_SECS" Default="600" Mode="" Description="How often to check backhaul status (seconds)" Type="Variable" Display="always" Required="false" Mask="false">600</Config>
+  <Config Name="Ping Interval (seconds)" Target="PING_INTERVAL_SECS" Default="60" Mode="" Description="How often to ping satellites (seconds)" Type="Variable" Display="always" Required="false" Mask="false">60</Config>
+</Container>
