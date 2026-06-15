@@ -1607,6 +1607,7 @@ DASH_HTML = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="refresh" content="60">
 <title>Orbi Monitor</title>
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/phillwall72/orbi-monitor/main/config/orbi-monitor-icon.png">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#f0f2f5;color:#333}
@@ -1637,8 +1638,7 @@ footer{text-align:right;font-size:0.75rem;color:#bbb;padding:8px 16px 20px}
 </head>
 <body>
 <header>
-<svg width="28" height="28" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="white" fill-opacity="0.2"/>
-<path d="M16 8L24 20H8Z" fill="white"/><circle cx="16" cy="22" r="2" fill="white"/></svg>
+<img src="https://raw.githubusercontent.com/phillwall72/orbi-monitor/main/config/orbi-monitor-icon.png" width="32" height="32" style="border-radius:6px">
 <h1>Orbi Monitor</h1><span style="margin-left:8px;font-size:0.8rem;opacity:0.7">v{{VERSION}}</span><span style="margin-left:auto;font-size:0.8rem;opacity:0.75">auto-refreshes every 60s</span>
 </header>
 <div class="wrap">
