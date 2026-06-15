@@ -12,8 +12,8 @@
   <Overview>Monitors Orbi satellite backhaul status and ping latency. Provides a web dashboard and email alerts for disconnections, status changes and errors.</Overview>
   <Category>Network:Management</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
-  <TemplateURL/>
-  <Icon>/boot/config/plugins/dockerMan/templates-user/orbi-monitor-icon.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/phillwall72/orbi-monitor/main/config/orbi-monitor.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/phillwall72/orbi-monitor/main/config/orbi-monitor-icon.png</Icon>
   <ExtraParams>--shm-size=1g</ExtraParams>
   <PostArgs/>
   <CPUset/>
