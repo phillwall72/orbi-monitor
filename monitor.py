@@ -7,7 +7,7 @@ Orbi Satellite Backhaul Monitor v3.4.0
 - Per-satellite disconnect and ping timeout state machines with auto power cycle
 - Web dashboard on port 8080 with SVG charts (responsive, log scale, 95th pct cap)
 - Daily SVG summary email at midnight
-- Version read from /data/version.txt
+- Version read main git check in tags
 """
 
 import os, json, time, logging, smtplib, threading, subprocess, sqlite3, math, asyncio
