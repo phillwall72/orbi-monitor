@@ -4,6 +4,7 @@ Orbi Satellite Backhaul Monitor v3.4.0
 - Playwright-based backhaul scraping every 10 minutes
 - Enhanced ping burst monitoring (10 pings, min/max/avg/loss) every 60 seconds
 - Tapo P110 smart plug integration via TP-Link cloud API (firmware 1.4.6 compatible)
+- TPlink smart plugs included too
 - Per-satellite disconnect and ping timeout state machines with auto power cycle
 - Web dashboard on port 8080 with SVG charts (responsive, log scale, 95th pct cap)
 - Daily SVG summary email at midnight
